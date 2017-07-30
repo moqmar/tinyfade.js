@@ -1,9 +1,9 @@
 all: js css
 
 js:
-	cat header > tinyfade.min.js
-	uglifyjs --compress --mangle -- tinyfade.js >> tinyfade.min.js
+	cat header > dist/tinyfade.min.js
+	uglifyjs --compress --mangle -- tinyfade.js >> dist/tinyfade.min.js
 
 css:
-	cat header > tinyfade.min.css
-	uglifycss tinyfade.css >> tinyfade.min.css
+	cat header > dist/tinyfade.min.css
+	uglifycss tinyfade.css >> dist/tinyfade.min.css
