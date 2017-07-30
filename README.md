@@ -1,5 +1,5 @@
 # Tinyfade.js
-A tiny (less than 1kb gzipped) plain JavaScript library for fully responsive image slideshows.
+A tiny (~1kb gzipped) plain JavaScript library for fully responsive image slideshows.
 
 [View Demo](https://moqmar.github.io/tinyfade.js/)
 
