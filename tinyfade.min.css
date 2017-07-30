@@ -1,0 +1,8 @@
+/*
+ * Tinyfade - responsive image slideshow backgrounds with plain javascript.
+ *
+ * Version 1.0
+ * Copyright (c) 2017 Moritz Marquardt
+ * Licensed under MIT License
+ */
+.tinyfade{position:relative;font-size:0}.tinyfade img{position:relative;width:100%;opacity:0}.tinyfade img:not(:first-of-type){position:absolute;top:0;left:0;right:0}.tinyfade:not(.tinyfade-js) img:first-of-type{opacity:1}img.tinyfade-current{z-index:2;opacity:1}img.tinyfade-last{z-index:1;opacity:1}
