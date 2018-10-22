@@ -19,15 +19,20 @@ function Tinyfade(e, interval, animationSpeed) {
     // Set animation speed
     this.s = animationSpeed; if (this.s == undefined) this.s = 750;
     let s = document.createElement("style");
-    s.textContent = ".tinyfade img {transition: opacity " + this.s + "ms}";
-    this.e.insertBefore(s, this.c);
+    s.scoped = true;
+    s.textContent = ".tinyfade>* {transition: opacity " + this.s + "ms}";
+    this.e.appendChild(s, this.c);
     
     // Set interval
     this.i = interval || 5000;
+    this.j = null;
     if (this.i > 0) this.j = setInterval(tf => tf.next(), this.i, this);
 }
 Tinyfade.prototype.goto = function(c) {
     if (!this.e) throw new Error("This Tinyfade instance has been destroyed.");
+    
+    if (this.j !== null) clearInterval(this.j);
+    if (this.i > 0) this.j = setInterval(tf => tf.next(), this.i, this);
 
     // Show current
     c.classList.add("tinyfade-current");
@@ -47,14 +52,14 @@ Tinyfade.prototype.goto = function(c) {
 Tinyfade.prototype.next = function() {
     if (!this.e) throw new Error("This Tinyfade instance has been destroyed.");
 
-    let e = this.c.nextElementSibling || this.e.firstElementChild.nextElementSibling;
+    let e = this.c.nextElementSibling;
+    if (!e || e.tagName == "STYLE") e = this.e.firstElementChild;
     this.goto(e);
 }
 Tinyfade.prototype.prev = function() {
     if (!this.e) throw new Error("This Tinyfade instance has been destroyed.");
 
-    let e = this.c.previousElementSibling;
-    if (!e || e.tagName == "STYLE") e = this.e.lastElementChild;
+    let e = this.c.previousElementSibling || this.e.lastElementChild;
     this.goto(e);
 }
 Tinyfade.prototype.pause = function() {

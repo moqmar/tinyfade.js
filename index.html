@@ -1,4 +1,5 @@
 <!doctype html>
+<title>tinyfade.js</title>
 <meta name="viewport" content="width=device-width">
 <script src="tinyfade.js"></script>
 <link rel="stylesheet" href="tinyfade.css">
@@ -17,14 +18,16 @@
     h1 { font-family: Londrina Solid, sans-serif; font-weight: 400; margin: 0 0 15px; padding: 0; font-size: 48px; }
     p { font-family: Roboto Slab, serif; text-align: center; margin: 0 0 60px; }
     a { color: #06f; }
+    .tinyfade>div { background: url(https://source.unsplash.com/VdFkSO3uePI/750x500) no-repeat center / cover; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px; color: #fff; }
 </style>
 <h1>Tinyfade.js</h1>
-<p>A tiny plain JavaScript library for fully responsive image slideshows.<br><a href="https://github.com/moqmar/tinyfade.js">Show source on GitHub</a></p>
+<p>A tiny plain JavaScript library for customizable fully responsive image slideshows.<br><a href="https://github.com/moqmar/tinyfade.js">Show source on GitHub</a></p>
 
 <div id="slider" class="tinyfade">
     <img src="https://source.unsplash.com/EBiHUBxuHIE/750x500">
     <img src="https://source.unsplash.com/Z0tTnl_eOIo/750x500">
     <img src="https://source.unsplash.com/WSFY8g2CJDo/750x500">
+    <div style="height: 100%;"><p style="margin-bottom: 0"><strong style="font-size: 1.2em; display: block; margin-bottom: 10px;">Hello World!</strong>You can now also add text!</p></div>
 </div>
 <script>
     window.tf = new Tinyfade("#slider", 5000, 1000);
@@ -39,6 +42,8 @@
   &lt;img src="https://source.unsplash.com/trvP9JiYC1E/750x500"&gt;
   &lt;img src="https://source.unsplash.com/Z0tTnl_eOIo/750x500"&gt;
   &lt;img src="https://source.unsplash.com/WSFY8g2CJDo/750x500"&gt;
+  &lt;!-- only the first element needs a fixed height, everywhere else you can use 100% to match it --&gt;
+  &lt;div style="height: 100%"&gt;Hello World&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;script&gt;
