@@ -8,7 +8,7 @@ The height of the first image is used as the slideshow height. Ideally, all imag
 
 ### Usage example
 ```html
-<script src="tinyfade.min.js">
+<script src="tinyfade.min.js"></script>
 <link rel="stylesheet" src="tinyfade.min.css">
 
 <!-- ... -->
@@ -17,6 +17,8 @@ The height of the first image is used as the slideshow height. Ideally, all imag
   <img src="https://source.unsplash.com/trvP9JiYC1E/750x500">
   <img src="https://source.unsplash.com/Z0tTnl_eOIo/750x500">
   <img src="https://source.unsplash.com/WSFY8g2CJDo/750x500">
+  <!-- only the first element needs a fixed height, everywhere else you can use 100% to match it -->
+  <div style="height: 100%">Hello World</div>
 </div>
 
 <script>
